@@ -21,9 +21,9 @@
         method="POST"
     >
         <label for="seat-select">Seat:</label>
-        <input name="seat" required placeholder="seat number A1-F99 " pattern="[A-F][1-9]\d?">
+        <input name="seat" required placeholder="A1-F99 " pattern="[A-F][1-9]\d?">
         <label for="price-input">Price:</label>
-        <input type="text" name="price" id="price-input" required>
+        <input type="text" name="price" placeholder="$0" id="price-input" required>
         <button id="btn-ticket" type="submit">Add Ticket</button>
     </form>
     <% if (flight.tickets.length) { %>
