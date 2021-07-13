@@ -13,7 +13,34 @@
         <div><%= flight.flightNo %></div>
         <div>Departs: </div>
         <div><%= flight.departs %></div>
+
+        <% // start destinations list %>
+        <div>Destinations:</div>
+        <ul>
+            <% flight.destinations.forEach(dest => { %>
+                <li>
+                    <%= dest.airport %>
+                    
+                </li>
+            <% }) %> 
+        </ul>
+        <% // end destinations list %>
     </section>
+
+    <% // add to destinations form below this comment %>
+	<form 
+        id="add-destination-to-airport" 
+        action="/flights/<%= flight._id %>/destinations" 
+        method="post"
+    >
+        <select name="destinationId">
+            <% destinations.forEach(destination => { %>
+                <option value="<%= destination._id %>"><%= destination.airport %> </option>
+            <% }) %> 
+        </select>
+        <button type="submit">Add to Destinations</button>
+    </form>
+
     <h2>Tickets</h2>
     <form 
         id="add-ticket-form"
@@ -46,7 +73,7 @@
         </tbody>
         </table>
     <% } else { %>
-        <h3>No Ticket Yet</h3>
+        <h3>No Tickets Yet</h3>
     <% } %>
 </main>
 

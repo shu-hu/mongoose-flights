@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/destinations/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+	<h1><%= title %></h1>
+    <p>Please first ensure that the Destination is not in the dropdown
+    <select>
+        <% destinations.forEach(function(destination) { %>
+            <option><%= destination.airport %></option>
+        <% }) %>
+    </select>
+    </p>
+    <form id="add-destination-form" action="/destinations" method="POST">
+        <label for="airport-input">Airport:</label>
+        <input type="text" name="airport" id="airport-input">
+        <!-- <label for="date-input">Born:</label>
+        <input type="date" name="born" id="date-input"> -->
+        <button type="submit">Add Destination</button>
+    </form>
+</main>
+
+<%- include('../partials/footer') %>
