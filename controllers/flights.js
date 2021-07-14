@@ -8,6 +8,23 @@ export {
     show,
     createTicket,
     addToDestinations,
+    deleteFlight as delete,
+    deleteTicket,
+}
+
+function deleteTicket(req, res){
+    Flight.findById(req.params.id, function(err, flight) {
+        flight.tickets.remove({_id: req.params.ticketId})
+        flight.save(function(err) {
+            res.redirect(`/flights/${flight._id}`)
+        })
+    })
+}
+
+function deleteFlight(req, res) {
+    Flight.findByIdAndDelete(req.params.id, function(err, flight) {
+        res.redirect('/flights')
+    })
 }
 
 function addToDestinations(req, res) {
@@ -58,15 +75,6 @@ function show(req, res) {
         })
     })
 }
-// function show(req, res) {
-//     Flight.findById(req.params.id, function (err, flight) {
-//         res.render('flights/show', { 
-//             title: 'Flight Detail', 
-//             flight: flight,
-//             err: err,
-//         })
-//     })
-// }
 
 function create(req, res) {
     if (req.body.cast) {

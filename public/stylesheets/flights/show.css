@@ -59,3 +59,20 @@ section div:nth-child(even) {
 #add-ticket-form > button:hover {
     background-color: #FF6A3D;
 }
+
+#delete-btn{
+    color: #FF6A3D;
+    border-color: #9DAAF2;
+}
+
+#delete-btn:hover{
+    background-color: #F4DB7D;
+}
+
+#dest-btn {
+    background-color: #F4DB7D;
+}
+
+#dest-btn:hover {
+    background-color: #FF6A3D;
+}

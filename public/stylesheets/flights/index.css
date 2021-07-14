@@ -34,3 +34,11 @@ table td {
 #list a:hover {
     background-color: white;
 }
+
+#delete-btn {
+    color: red;
+}
+
+#delete-btn:hover {
+    background-color: #F4DB7D;
+}

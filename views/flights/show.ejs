@@ -38,7 +38,7 @@
                 <option value="<%= destination._id %>"><%= destination.airport %> </option>
             <% }) %> 
         </select>
-        <button type="submit">Add to Destinations</button>
+        <button id="dest-btn" type="submit">Add to Destinations</button>
     </form>
 
     <h2>Tickets</h2>
@@ -67,7 +67,12 @@
             <tr>
                 <td><%= ticket.createdAt.toLocaleDateString() %></td>
                 <td><%= ticket.seat %></td>
-                <td><%= ticket.price %></td>
+                <td><%= `$${ticket.price}` %></td>
+                <td>
+                    <form action="/flights/<%= flight._id %>/tickets/<%= ticket._id %>?_method=DELETE" class="delete-form" method="POST">
+                        <button id="delete-btn" class="fas fa-times" type="submit"></button>
+                    </form>
+                </td>
             </tr>
             <% }) %>
         </tbody>
