@@ -34,6 +34,14 @@ body {
   font-size: 1.8rem;
 }
 
+body > main.main-bg{
+  background-image: url("../image/flights2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #FFDDCC;
+  font-size: 30px;
+}
+
 body > main {
   grid-area: main;
   display: flex;

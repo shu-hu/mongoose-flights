@@ -8,6 +8,9 @@ export {
 function create(req, res) {
     // let birthDate = new Date(req.body.born)
     // req.body.born = birthDate.toUTCString()
+    if (err) {
+        return res.render()
+    }
     Destination.create(req.body, function (err, destination) {
         res.redirect('/destinations/new')
     })
