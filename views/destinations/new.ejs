@@ -16,6 +16,9 @@
         <input type="text" name="airport" id="airport-input">
         <button id="add-dest-btn" type="submit">Add Destination</button>
     </form>
+    <% if (error) { %>
+        <p id="err-msg">Please enter a valid destination.</p>
+    <% } %>
 </main>
 
 <%- include('../partials/footer') %>

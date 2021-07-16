@@ -25,3 +25,7 @@ form > button {
 #add-dest-btn:hover {
     background-color: #FF6A3D;
 }
+
+#err-msg {
+    color: #FF6A3D;
+}
